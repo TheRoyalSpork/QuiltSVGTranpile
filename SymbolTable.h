@@ -15,6 +15,10 @@ class SymbolTable {
 	    out << key << "->" << value << endl;
       return out<<endl;
 	}
+	~SymbolTable(){
+	  for (auto& [key, value]: symbols)
+	    value->cleanUp();
+	}
 };
 
 extern SymbolTable symbolTable;

@@ -65,10 +65,10 @@ class QuiltNode:public QuiltNodeId {
 		  out << n->children[i] << endl; 
 		return out;
 	}
-	/*~QuiltNode() {
+	void cleanUp() {
 		for(unsigned i=0;i<children.size();i++) 
            delete children[i];
-	}*/
+	}
 	SVGArt *eval() {
 		// Memory leaks abound
 		if (operation==A) return new LitA();
